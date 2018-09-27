@@ -18,6 +18,9 @@ public interface StationDao {
     @Query("SELECT * FROM station WHERE id = :id LIMIT 1")
     Station findById(int id);
 
+    @Query("SELECT * FROM station WHERE name = :name LIMIT 1")
+    Station findByName(String name);
+
     @Insert
     void insertAll(Station... stations);
 

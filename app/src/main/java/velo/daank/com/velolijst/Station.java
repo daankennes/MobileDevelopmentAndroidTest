@@ -13,10 +13,17 @@ public class Station {
     private String name;
 
     @ColumnInfo(name = "lat")
-    private float lat;
+    private String lat;
 
     @ColumnInfo(name = "lng")
-    private float lng;
+    private String lng;
+
+    public Station(int id, String name, String lat, String lng) {
+        this.id = id;
+        this.name = name;
+        this.lat = lat;
+        this.lng = lng;
+    }
 
     public int getId() {
         return id;
@@ -34,19 +41,19 @@ public class Station {
         this.name = name;
     }
 
-    public float getLat() {
+    public String getLat() {
         return lat;
     }
 
-    public void setLat(float lat) {
+    public void setLat(String lat) {
         this.lat = lat;
     }
 
-    public float getLng() {
+    public String getLng() {
         return lng;
     }
 
-    public void setLng(float lng) {
+    public void setLng(String lng) {
         this.lng = lng;
     }
 }
