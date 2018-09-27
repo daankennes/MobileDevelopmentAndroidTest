@@ -3,6 +3,7 @@ package velo.daank.com.velolijst;
 import android.app.ListActivity;
 import android.arch.persistence.room.Room;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -95,5 +96,11 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         String item = (String) getListAdapter().getItem(position);
         Toast.makeText(this, item + " selected", Toast.LENGTH_LONG).show();
+
+        Intent i = new Intent(this, Map.class);
+        i.putExtra("station", item);
+        // set the request code to any code you like,
+        // you can identify the callback via this code
+        startActivityForResult(i, 1);
     }
 }
